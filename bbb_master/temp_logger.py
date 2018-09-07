@@ -19,13 +19,13 @@ for j in range(i):
 
     with open(f_log, 'a') as iFile:
         time_ = str(datetime.datetime.now())
-
+        t = 0
         for i in range(n):
             t += ADC.read(P_temp) * 0.18 * 1000
 
 
         temp_ = str(t/n)
         iFile.write(time_ + "\t" + temp_ +"\n")
-    time.sleep(12)
+    time.sleep(1200)
     sys.stderr.write(str(j)+ "\n")
 
