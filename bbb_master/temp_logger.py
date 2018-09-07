@@ -18,7 +18,7 @@ for j in range(i):
 
     with open(f_log, 'a') as iFile:
         time_ = str(datetime.datetime.now())
-        temp_ = str(ADC.read(P_data)*0.18)
+        temp_ = str(ADC.read(P_temp) * 0.18 * 1000)
         iFile.write(time_ + "\t" + temp_ +"\n")
     time.sleep(12)
     sys.stderr.write(str(j)+ "\n")
