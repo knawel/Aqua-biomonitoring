@@ -1,6 +1,7 @@
 from app import app
 from flask import render_template
-
+from flask import Flask, render_template
+from graph import build_graph
 
 @app.route('/')
 @app.route('/index')
@@ -11,18 +12,24 @@ def index():
 
 @app.route('/fig')
 def fig():
-    fig, ax = plt.subplots()
-    Ntotal = 1000
-    N, bins, patches = ax.hist(np.random.rand(Ntotal), 20)
+    # These coordinates could be stored in DB
+    x1 = [0, 1, 2, 3, 4]
+    y1 = [10, 30, 40, 5, 50]
+    x2 = [0, 1, 2, 3, 4]
+    y2 = [50, 30, 20, 10, 50]
+    x3 = [0, 1, 2, 3, 4]
+    y3 = [0, 30, 10, 5, 30]
 
-    fracs = N.astype(float)/N.max()
-    norm = colors.Normalize(fracs.min(), fracs.max())
+    graph1_url = build_graph(x1, y1);
+    graph2_url = build_graph(x2, y2);
+    graph3_url = build_graph(x3, y3);
 
-    for thisfrac, thispatch in zip(fracs, patches):
-        color = cm.jet(norm(thisfrac))
-        thispatch.set_facecolor(color)
+    return render_template('graphs.html',
+                           graph1=graph1_url,
+                           graph2=graph2_url,
+                           graph3=graph3_url)
 
-    img = io.BytesIO()
-    fig.savefig(img)
-    img.seek(0)
-    return send_file(img, mimetype='image/png')
+
+# if __name__ == '__main__':
+#     app.debug = True
+#     app.run()
