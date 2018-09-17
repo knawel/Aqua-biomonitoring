@@ -48,7 +48,7 @@ def index():
 
 @app.route('/fig')
 def fig():
-    return draw_fig(data["line"])
+    return draw_fig("line")
 
 
 # if __name__ == '__main__':
