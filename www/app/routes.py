@@ -1,9 +1,11 @@
 from app import app
 from flask import render_template
 import mpld3
-import numpy as np
+import matplotlib
 
-import matplotlib as plt
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+plt.ioff()
 
 import random
 
