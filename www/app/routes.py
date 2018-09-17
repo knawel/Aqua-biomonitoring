@@ -26,7 +26,7 @@ def fig():
 
     plot_url = base64.b64encode(img.getvalue()).decode()
 
-    return render_template('fig.html', plot_url='<img src="data:image/png;base64,{}">')
+    return render_template('fig.html', PL=plot_url)
 
 if __name__ == '__main__':
     app.debug = True
