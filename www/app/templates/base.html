@@ -1,17 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      {% if title %}
-      <title>{{ title }} - Microblog</title>
-      {% else %}
-      <title>Welcome to Microblog</title>
-      {% endif %}
-    </head>
-    <body>
-        <div>BIO: <a href="/index">Status</a></div>
-        <div>pic: <a href="/fig">Home</a></div>
-        <!--<div>Light: <a href="/index">Home</a></div>-->
-        <hr>
-        {% block content %}{% endblock %}
-    </body>
-</html>
+<!doctype html>
+<title>Aqua biomonitor</title>
+<link rel="stylesheet" href="../static/base.css">
+<body>
+  <header>
+      <h1>{{ title }}</h1>
+  </header>
+
+<nav>
+  <ul>
+    <li>
+      <a href="/index">Home</a>
+    </li>
+    <!--<li>-->
+      <!--<a href="#">About</a>-->
+    <!--</li>-->
+    <li>
+      <a href="/fig">Status</a>
+    </li>
+    <li>
+      <a href="#">Ref...</a>
+    </li>
+  </ul>
+</nav>
+
+
+  <aside>
+      <p>Temterature =  XX </p>
+      <p>Light =  XX </p>
+  </aside>
+
+
+  <article>
+  {% block content %}{% endblock %}
+  </article>
+
+</body>
