@@ -47,9 +47,9 @@ P_temp = "P9_37"
 P_light = "P9_40"
 
 f_log = "sensors.log"
-days_records = 60.0 # 60 days of records
-sleep_time = 15.0*60 # every 15 mins
-n_reps = days_records * 24 * 60 * 60 / sleep_time
+days_records = 60 # 60 days of records
+sleep_time = 15*60 # every 15 mins
+n_reps = int(days_records * 24 * 60 * 60 / sleep_time)
 
 n = 3 # number of measurements for temp
 
