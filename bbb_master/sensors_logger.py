@@ -66,7 +66,7 @@ for j in range(n_reps):
         # t += 0.35
     temp_ = str(t/n)
     #light
-    light_ = 1.0 - ADC.read(P_data)
+    light_ = 1.0 - ADC.read(P_light)
     # light_ = 0.1
 
     sen1_ = 'na'
