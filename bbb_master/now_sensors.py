@@ -8,7 +8,7 @@ import sys
 ADC.setup()
 P_temp = "P9_37"
 P_light = "P9_40"
-
+n = 3 #number of measurements
 
 
 #measure
@@ -24,8 +24,8 @@ sen1_ = 'na'
 sen2_ = 'na'
 sen3_ = 'na'
 
-sensors_data = [temp_, light_, sen1_, sen2_, sen3_]
+sensors_data = [str(temp_), str(light_), sen1_, sen2_, sen3_]
 
 #output
 
-sys.stdout.write(time_ + '\t' + '\t'.join(sensors_data))
+sys.stdout.write(time_ + '\t' + '\t'.join(sensors_data) + '\n')
