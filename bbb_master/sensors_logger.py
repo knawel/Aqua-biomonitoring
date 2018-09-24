@@ -1,5 +1,5 @@
 #sensor logger, ver. 1.0
-import Adafruit_BBIO.GPIO as GPIO
+# import Adafruit_BBIO.GPIO as GPIO
 import Adafruit_BBIO.ADC as ADC
 import time
 import datetime
